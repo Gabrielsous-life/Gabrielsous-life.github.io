@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabriel Augusto — Portfólio</title>
+  <meta name="description" content="Portfólio do Gabriel Augusto: desenvolvimento de software, dados e IA. Python, SQL e JavaScript. Londrina-PR.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- TOPO / NAVEGAÇÃO -->
+  <header class="topbar">
+    <a class="logo" href="#inicio">gabriel<span>.dev</span></a>
+    <nav aria-label="Seções">
+      <a href="#sobre">sobre</a>
+      <a href="#projetos">projetos</a>
+      <a href="#stack">stack</a>
+      <a href="#trajetoria">trajetória</a>
+      <a href="#contato">contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <p class="tag">// Londrina, PR · Software · Dados · IA</p>
+      <h1>Gabriel<br>Augusto</h1>
+      <p class="lead">Dev em formação e aprendiz na Tata Consultancy Services. Escrevo código e poesia, e gosto quando os dois se encontram em programas que contam histórias.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projetos">Ver projetos</a>
+        <a class="btn" href="https://github.com/Gabrielsous-life">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/gabriel-silvagotardo/">LinkedIn</a>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="section">
+      <h2><span class="num">01</span> Sobre</h2>
+      <div class="about">
+        <p>Sou estudante do Ensino Médio na Marista Escola Social Irmão Acacio e aprendiz na TCS. Estudo desenvolvimento de software, dados e IA, com foco em Python, SQL e JavaScript, e aprendo do jeito que funciona pra mim: construindo coisas, quebrando, consertando e versionando tudo no GitHub.</p>
+        <p>O que me puxa pra programação é a mistura de lógica com narrativa e estética. Já fiz de API com banco de dados a um site retrô de locadora dos anos 90, e estou escrevendo um RPG textual noir.</p>
+        <p>Fora do código: música o tempo todo, poesia de influência expressionista, academia e roupa larga de skatista.</p>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="section">
+      <h2><span class="num">02</span> Projetos</h2>
+
+      <!-- Destaque 1: GotAlert -->
+      <article class="project">
+        <div class="project-info">
+          <p class="project-kind">PWA + API · programa goIT (TCS + Marista) · ODS 6</p>
+          <h3>GotAlert</h3>
+          <p>Monitoramento inteligente do consumo de água, com alertas de vazamento e de uso fora do padrão. Tem app instalável no celular (PWA), API em Node.js com Express, banco SQLite com opção de TiDB Cloud e um simulador de sensor pra testar vazamentos.</p>
+          <p class="status">Software funcionando com dados simulados. Próximo passo: o hardware com sensor de vazão no ESP32.</p>
+          <ul class="chips">
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>SQLite / TiDB</li>
+            <li>PWA</li>
+            <li>ESP32</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/Gabrielsous-life/goIT---GotAlert">Código no GitHub →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Destaque 2: ECHO-6, com terminal de demonstração (lógica em script.js) -->
+      <article class="project featured">
+        <div class="project-info">
+          <p class="project-kind">RPG textual · cyberpunk / noir · em desenvolvimento</p>
+          <h3>ECHO-6</h3>
+          <p>Uma investigação em Cobalt City, uma cidade de chuva e néon. O jogador trabalha ao lado de A.R.T.H.U.R., uma inteligência artificial investigativa ligada à Aegis Corp. Tudo acontece em texto: atmosfera, escolhas e worldbuilding.</p>
+          <p class="status">Experimente ao lado: digite 1, 2 ou 3 no terminal.</p>
+          <ul class="chips">
+            <li>Narrativa interativa</li>
+            <li>Worldbuilding</li>
+            <li>Lógica de jogo</li>
+          </ul>
+        </div>
+
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span></span><span></span><span></span>
+            <p>echo-6 · cobalt city</p>
+          </div>
+          <pre id="terminal-output" class="terminal-body">&gt; A.R.T.H.U.R. online.
+&gt; Detetive, a chuva não parou em Cobalt City.
+&gt; A Aegis Corp diz que está tudo sob controle.
+&gt; Eu não acredito nela.
+
+  [1] Investigar o beco
+  [2] Consultar os arquivos da Aegis
+  [3] Ficar em silêncio</pre>
+          <div class="terminal-input">
+            <label for="cmd">&gt;</label>
+            <input id="cmd" type="text" autocomplete="off" placeholder="digite 1, 2 ou 3 e aperte Enter">
+          </div>
+        </div>
+      </article>
+
+      <!-- Projetos menores -->
+      <div class="project-grid">
+        <article class="card">
+          <p class="project-kind">HTML · CSS</p>
+          <h3>VideoMax: Locadora Anos 90</h3>
+          <p>Site temático de locadora com visual retrô da web dos anos 90: catálogo por gênero, capas, trailers e tabela de preços.</p>
+          <div class="project-links">
+            <a href="https://gabrielsous-life.github.io/locadora-anos90/">Ver online →</a>
+            <a href="https://github.com/Gabrielsous-life/locadora-anos90">Código</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="project-kind">HTML · CSS · JavaScript</p>
+          <h3>Formulário de Inscrição</h3>
+          <p>Formulário responsivo com validação nativa do HTML5 e botão de mostrar e ocultar senha.</p>
+          <div class="project-links">
+            <a href="https://gabrielsous-life.github.io/Formulario-entrada/">Ver online →</a>
+            <a href="https://github.com/Gabrielsous-life/Formulario-entrada">Código</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="project-kind">MySQL · Workbench</p>
+          <h3>Banco da Copa 2026</h3>
+          <p>Modelagem e scripts SQL de um banco da Copa do Mundo (grupos, seleções, jogadores, partidas e estatísticas) e a modelagem lógica de uma rede social.</p>
+          <div class="project-links">
+            <a href="https://github.com/Gabrielsous-life/banco-de-dados-mysql">Código no GitHub →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="project-kind">Python · CLI</p>
+          <h3>Conversor de Temperatura</h3>
+          <p>Converte Celsius para Fahrenheit e Kelvin pelo terminal e trata entradas inválidas pedindo o valor de novo.</p>
+          <div class="project-links">
+            <a href="https://github.com/Gabrielsous-life/conversor-temperatura2">Código no GitHub →</a>
+          </div>
+        </article>
+      </div>
+
+      <p class="section-note more">Também no GitHub: exercícios de <a href="https://github.com/Gabrielsous-life/python-exercicios">Python</a> e de <a href="https://github.com/Gabrielsous-life/JS-1-20-">fundamentos de JavaScript</a>.</p>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="section">
+      <h2><span class="num">03</span> Stack</h2>
+      <p class="section-note">Onde eu estou, sendo honesto, em cada uma.</p>
+      <ul class="stack">
+        <li><strong>Python</strong><span class="level">aprendendo</span></li>
+        <li><strong>SQL / MySQL</strong><span class="level">aprendendo</span></li>
+        <li><strong>JavaScript</strong><span class="level">aprendendo</span></li>
+        <li><strong>HTML e CSS</strong><span class="level">aprendendo</span></li>
+        <li><strong>Node.js e Express</strong><span class="level">primeiros projetos</span></li>
+        <li><strong>SQLite</strong><span class="level">primeiros projetos</span></li>
+        <li><strong>Git e GitHub</strong><span class="level">uso no dia a dia</span></li>
+        <li><strong>VS Code</strong><span class="level">uso no dia a dia</span></li>
+      </ul>
+    </section>
+
+    <!-- TRAJETÓRIA -->
+    <section id="trajetoria" class="section">
+      <h2><span class="num">04</span> Trajetória</h2>
+      <ol class="timeline">
+        <li>
+          <p class="when">Agora</p>
+          <h3>Aprendiz · Tata Consultancy Services</h3>
+          <p>Contrato de aprendizagem, junto com a escola. Participante do programa goIT.</p>
+        </li>
+        <li>
+          <p class="when">Agora</p>
+          <h3>Ensino Médio · Marista Escola Social Irmão Acacio</h3>
+          <p>Estudando também literatura e redação, de olho no vestibular.</p>
+        </li>
+        <li>
+          <p class="when">Próximo passo</p>
+          <h3>Graduação em tecnologia</h3>
+          <p>Objetivo: Universidade Estadual de Londrina (UEL).</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="section contact">
+      <h2><span class="num">05</span> Contato</h2>
+      <p>Aberto a conversar sobre projetos, oportunidades e ideias de jogos em texto.</p>
+      <ul class="contact-links">
+        <li><a href="mailto:gabriel.ag.silva.gotardo@gmail.com">gabriel.ag.silva.gotardo@gmail.com</a></li>
+        <li><a href="https://github.com/Gabrielsous-life">github.com/Gabrielsous-life</a></li>
+        <li><a href="https://www.linkedin.com/in/gabriel-silvagotardo/">linkedin.com/in/gabriel-silvagotardo</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Feito à mão por Gabriel Augusto · Londrina, PR</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

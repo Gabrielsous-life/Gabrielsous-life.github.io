@@ -1,0 +1,330 @@
+/* Layout: coluna única estreita, terminal do ECHO-6 como peça central.
+   Paleta noir: azul-cobalto (Cobalt City) + âmbar de luz de rua. */
+:root {
+  --bg: #0d1017;
+  --surface: #151a24;
+  --line: #262e3d;
+  --text: #dfe4ee;
+  --muted: #8b95a8;
+  --cobalt: #4f7cff;
+  --amber: #f2b54a;
+
+  --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+a { color: var(--cobalt); }
+a:focus-visible, input:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+}
+
+/* ---------- Topo ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px 24px;
+  padding: 14px max(16px, calc((100% - 960px) / 2));
+  background: rgb(13 16 23 / 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+.logo { color: var(--text); text-decoration: none; font-weight: 500; }
+.logo span { color: var(--amber); }
+.topbar nav { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.topbar nav a { color: var(--muted); text-decoration: none; }
+.topbar nav a:hover { color: var(--text); }
+
+/* ---------- Estrutura ---------- */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.section { padding: 72px 0 0; }
+
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.num {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--amber);
+}
+
+.section-note { color: var(--muted); margin: -12px 0 20px; }
+
+/* ---------- Hero ---------- */
+.hero { padding: 88px 0 24px; }
+.tag {
+  font-family: var(--font-mono);
+  color: var(--amber);
+  font-size: 0.875rem;
+  margin: 0 0 8px;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(4rem, 16vw, 9rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+.lead {
+  max-width: 34ch;
+  font-size: 1.375rem;
+  line-height: 1.45;
+  margin: 20px 0 32px;
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+}
+.btn:hover { border-color: var(--muted); }
+.btn-primary { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+.btn-primary:hover { background: #3d68e8; border-color: #3d68e8; }
+
+/* ---------- Sobre ---------- */
+.about { display: grid; gap: 16px; max-width: 65ch; }
+.about p { margin: 0; }
+
+/* ---------- Projetos ---------- */
+.project {
+  display: grid;
+  gap: 28px;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+}
+.project.featured { grid-template-columns: 1fr 1.1fr; align-items: start; }
+
+.project-kind {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin: 0 0 4px;
+}
+.project h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.project-info p { margin: 0 0 16px; max-width: 60ch; }
+
+.chips {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chips li {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  padding: 3px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+}
+.project-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.project-links a { font-family: var(--font-mono); font-size: 0.9375rem; }
+.status { color: var(--amber); font-size: 0.9375rem; }
+
+/* Projetos menores em grade */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.card h3 { font-size: 1.5rem; }
+.card p { margin: 0 0 16px; }
+.card .project-links { margin-top: auto; }
+.more { margin: 20px 0 0; }
+
+/* Terminal */
+.terminal {
+  background: #080a0f;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgb(0 0 0 / 0.35), 0 0 0 1px rgb(79 124 255 / 0.08);
+}
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.terminal-bar span { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
+.terminal-bar p {
+  margin: 0 0 0 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.terminal-body {
+  margin: 0;
+  padding: 16px;
+  min-height: 230px;
+  max-height: 320px;
+  overflow: auto;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #b9c6e4;
+  white-space: pre-wrap;
+}
+.terminal-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  color: var(--amber);
+}
+.terminal-input input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.875rem;
+}
+
+/* ---------- Stack ---------- */
+.stack {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.stack li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bg);
+}
+.level { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--muted); }
+
+/* ---------- Trajetória ---------- */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 24px;
+  border-left: 1px solid var(--line);
+}
+.timeline li { position: relative; padding-left: 24px; }
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 8px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--cobalt);
+}
+.timeline li:last-child::before { background: var(--bg); border: 1px solid var(--amber); }
+.when { margin: 0; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--amber); }
+.timeline h3 { font-size: 1.125rem; font-weight: 600; }
+.timeline p:last-child { margin: 2px 0 0; color: var(--muted); }
+
+/* ---------- Contato ---------- */
+.contact p { max-width: 55ch; margin: 0 0 20px; }
+.contact-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  font-family: var(--font-mono);
+}
+.contact-links span { color: var(--muted); }
+
+.footer {
+  max-width: 960px;
+  margin: 96px auto 0;
+  padding: 24px 16px 40px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+.footer p { margin: 0; }
+
+/* ---------- Celular ---------- */
+@media (max-width: 760px) {
+  .project.featured { grid-template-columns: 1fr; }
+  .section { padding-top: 56px; }
+  .hero { padding-top: 56px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
